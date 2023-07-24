@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Management System</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap');
+*,html
+{
+    box-sizing: border-box;
+}
+body
+{
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f2;
+    color: #0f0d0d;
+    font-family: 'Philosopher', sans-serif;
+}
+.header-in
+{
+    margin: auto;
+    height: 100px;
+    position: relative;
+    border-radius: 20px;
+    background-color: #6dd0e4;
+}
+.header-in img
+{
+    height: 60px;
+    margin:0px;
+    margin-top: -20px;
+}
+a
+{
+    text-decoration: none;
+    color: inherit;
+}
+.header ul
+{   
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    margin-top: 13px;
+}
+.header li
+{
+    float: left;    
+    padding:5px  10px;
+    margin: 7px 15px;
+    font-family:  sans-serif;
+    font-size: 17px;
+    transition: .5s;
+    line-height: 17px;
+    letter-spacing: 1px;
+}
+.header li:hover
+{
+    background-color: #be71a8c1;
+    color: #ffffff;
+}
+
+li.logo:hover
+{
+    background-color: transparent;
+    color: inherit;
+}
+.container
+{
+    width: 100%;
+    box-sizing: border-box;
+}
+.section-1
+{
+    background-image: url('5853-min-scaled.jpg');
+    background-size: cover;
+    background-position: right;
+    height:500px;
+    overflow: hidden;
+
+}
+.container-in
+{
+    width: 1100px;
+    margin: auto;
+
+}
+.container-in img
+{
+    display:inline-block;
+    width: 100%;    
+    transition: 1s;
+}
+.container h1
+{
+    font-family: 'Philosopher', sans-serif;
+    font-weight: lighter;
+    font-size: 60px;
+    margin-bottom: 20px;
+    margin-top: 120px;
+    color: #262626;
+}
+.container p
+{
+    width: 450px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 1px;
+}
+.section-1 a
+{   
+    float: left;
+    display: block;
+    width: 130px;
+    background-color: #262626;
+    border: 3px solid #262626;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    margin-right: 50px;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: .5s;
+}
+.section-1 a:hover
+{
+    background-color: beige;
+    color: #262626;
+    transform:scale(1.2);
+}
+.container2
+{
+    width: 100%;
+    background-color: #97b6e0;
+    margin: auto;
+    padding: 50px 0px;
+}
+.row
+{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.column-4
+{
+    flex: 0 25%;
+    width: 25%;
+    padding: 15px;
+}
+.column-5
+{
+    flex: 0 20%;
+    width: 20%;
+    padding: 15px;
+}
+.container2 h2
+{
+    font-size: 40px;
+    color: #262626;
+}
+.container2 p
+{
+    letter-spacing: 1px;
+    word-spacing: 5px;
+}
+.section-2
+{
+    padding: 100px 0px;
+    background-color: rgb(70, 188, 148);
+
+}
+.section-2 h2{
+    text-align: center;
+    font-size: 50px;
+    color: #262626;
+    margin: 0;
+}
+.section-2 h3{
+    font-weight: 100;
+    margin: 0;
+    line-height: 20px;
+    font-size: 25px;
+    text-align: center;
+}
+.section-2 p
+{
+    text-align: center;
+    width: auto;
+    margin-bottom: 50px;
+    font-size: 13px;
+}
+.section-2 .column-5 p
+{
+    font-size: 15px;
+    font-weight: bold;
+    color: #262626;
+    font-style: normal;
+    font-family: 'Philosopher', sans-serif;
+}
+.section-2 img
+{
+    border-radius: 20px;
+    cursor: pointer;
+}
+.section-3
+{
+    padding: 100px 0px;
+
+}
+.section-3 h2
+{
+    text-align: center;
+    color: #262626;
+    font-size: 40px;
+}
+.tab-box
+{
+   width: 500px;
+   margin: auto;
+   margin-bottom: 50px;
+   overflow: hidden;
+}
+.tabs
+{
+    width: calc(33.33% - 20px);
+    margin: 0px 10px;
+    padding: 15px;
+    text-align: center;
+    float: left;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: .3s;
+    border: 2px solid transparent;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tabs:hover
+{
+    border: 2px solid #445770;
+}
+.active-tab
+{
+    color: #262626;
+    font-weight: bold;
+    border: 2px solid #445770;
+}
+.tab-desc p
+{
+    font-style: normal;
+}
+.tab-desc span
+{
+    text-decoration:line-through;
+    opacity: 0.7;
+    margin-right: 20px;
+}
+.tab-desc
+{
+    background-image: linear-gradient(transparent 2%,#ffffff 90%);
+    margin-top: -80px;
+    position: relative;
+    padding-top: 60px;
+}
+.section-tab
+{
+    display: none;
+}
+.active-section-tab
+{
+    display: block;
+}
+.section-4 .container-in
+{
+    width: 90%;
+}
+.footer
+{
+    background-color: #e24545;
+    padding: 30px 0px;
+    margin-top: 50px;
+    overflow: hidden;
+}
+.ft-logo
+{
+    margin: auto;
+    display: block;
+    width: 90px;
+    border-radius: 50%;
+}
+.footer-menu
+{
+    display: block;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+.footer-menu a
+{
+    margin: 0px 20px;
+    color: #262626;
+}
+.copyright
+{
+    background-color: #262626;
+    color: #f5f5f5;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+}
+</style>
+<body>
+    <div class="header">
+        <div class="header-in">
+            <h1 style="padding: 20px;display: inline-flex;">Alumni's Home</h1>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="login2.html">Login</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li class="logo"><a href=""><img src="logo1.webp"></a></li>
+                <li><a href="">Events</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container section-1">
+        <div class="container-in">
+            <h1>Convocation Ceremony 2022</h1>
+            <div class="transbox">
+                <p>There are multiple upcoming events for our alumni.
+                Kindly try to attend the Events.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container section-2">
+        <div class="container-in">
+            <h3>Our Alumnis at great Heights</h3>
+            <p>Education is the key that unlocks the golden door to freedom.
+            </p>
+            <div class="row">
+                <div class="column-5"><img src="2022_9image_18_49_591713546sunil-chhetri.jpg">
+                    <p>Sunil Chhetri</p>
+                </div>
+                <div class="column-5"><img src="Suryakumar-Yadav.png">
+                    <p>Suryakumar Yadav</p>
+                </div>
+                <div class="column-5"><img src="istockphoto-1333350950-170667a.webp">
+                    <p>Xyz</p>
+                </div>
+                <div class="column-5"><img src="stock-photo-handsome-smiling-young-man-with-folded-arms-beautiful-portrait-of-laughing-joyful-cheerful-men-2069457431.jpg">
+                    <p>ABc</p>
+                </div>
+                <div class="column-5"><img src="73774233.webp">
+                    <p>Ayonika Paul</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container2">
+        <div class="container-in">
+            <div class="row">
+                <div class="column-4">
+                    <h2>Great<br>Achievements</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Tempore, suscipit.
+                    </p>
+                </div>
+                <div class="column-4">
+                    <a><img src="download.jpg"></a>
+                </div>
+                <div class="column-4">
+                    <a><img src="11.jpg"></a>
+                </div>
+                <div class="column-4">
+                    <a href=""><img src="12.jpg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container section-3">
+        <div class="container-in">
+            <h2>Pillai Group of Institutions</h2>
+            <div class="tab-box">
+                <div class="tabs active-tab" attr-tab="0">Till Now The Best</div>
+                <div class="tabs" attr-tab="1">New Upcoming</div>
+                <div class="tabs" attr-tab="2">Top Trending</div>
+            </div>
+            <div class="section-tab active-section-tab">
+                <div class="row">
+                    <div class="column-4">
+                        <img src="1679921572624.jpg">
+                        <div class="tab-desc">
+                            <h3>Seminar on AI</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="column-4">
+                        <img src="interactiveformats.jpg">
+                        <div class="tab-desc">
+                            <h3>Live Interactive Session</h3>
+                            <p></p>
+                        </div>
+                    </div><div class="column-4">
+                        <img src="ml.webp">
+                        <div class="tab-desc">
+                            <h3>Seminar on ML</h3>
+                            <p></p>
+                        </div>
+                    </div><div class="column-4">
+                        <img src="blog-331.png">
+                        <div class="tab-desc">
+                            <h3>Career Guidance by Alumni</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-tab">
+                <div class="row">
+                    <div class="column-4">
+                        <img src="Alumni-Meet-1.jpg">
+                        <div class="tab-desc">
+                            <h3>Alumni Meet 2023</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="column-4">
+                        <img src="convo.jpeg">
+                        <div class="tab-desc">
+                            <h3>Convocation Ceremony 2023</h3>
+                            <p></p>
+                        </div>
+                    </div><div class="column-4">
+                        <img src="download (1).jpg">
+                        <div class="tab-desc">
+                            <h3>Freshers Party</h3>
+                            <p></p>
+                        </div>
+                    </div><div class="column-4">
+                        <img src="unnamed.png">
+                        <div class="tab-desc">
+                            <h3>Alegria 2023</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-tab">
+                <div class="row">
+                    <div class="column-4">
+                        <img src="What-is-data-science-2.jpg">
+                        <div class="tab-desc">
+                            <h3>Webinar on Data Science and Big Data</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="column-4">
+                        <img src="photo-1572177812156-58036aae439c.jpg">
+                        <div class="tab-desc">
+                            <h3>Latest Projects</h3>
+                            <p></p>
+                        </div>
+                    </div><div class="column-4">
+                        <img src="white_coat_ceremony_gift_guide.jpg">
+                        <div class="tab-desc">
+                            <h3>Gift Ceremony </h3>
+                            <p></p>
+                        </div>
+                    </div><div class="column-4">
+                        <img src="What-is-Research-Purpose-of-Research-phul4s3cbwe0xam190dnc4kz3z616ajmfkygodcdqg.png">
+                        <div class="tab-desc">
+                            <h3>Research Models</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <img src="" class="ft-logo">
+        <div class="footer-menu">
+            <a href="">Home</a>
+                <a href="">Admin Login</a>
+                <a href="">Alumni Login</a>
+                <a href="">Events</a>
+                <a href="">About</a>
+        </div>
+    </div>
+    <div class="copyright">Copyright © 2023, All Rights Reserved.</div>
+    <script>
+        var tabs = document.getElementsByClassName('tabs');
+        for (var i = 0; i < tabs.length; i++) {
+            
+            tabs[i].addEventListener('click', (e) => {
+                var attr=e.target.getAttribute("attr-tab");
+                var sectab=document.getElementsByClassName('section-tab');
+                for(var m=0;m<sectab.length;m++)
+                {
+                    sectab[m].style.display='none';
+                }
+                document.getElementsByClassName('section-tab')[attr].style.display='block';
+                var tabchild=e.target.parentNode.children;
+                for(var j=0;j<tabchild.length;j++)
+                {
+                    tabchild[j].classList.remove('active-tab');
+                }
+                e.target.classList.add('active-tab');
+            });
+        }
+    </script>
+</body>
+</html>
